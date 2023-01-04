@@ -1,0 +1,17 @@
+{{log this}}
+
+<section class="blog-section d-flex flex-column col-10">
+    {{#if creatingPost}}
+        {{> create-post}}
+    {{else}}
+        {{> post-partial}}
+        <button class="btn btn-secondary"><b>+ New Post</b></button>
+    {{/if}}
+</section>
+
+{{!-- Conditionally render script based on whether user clicked on new post button --}}
+{{#if creatingPost}}
+<script src="./js/create-post.js"></script>
+{{else}}
+<script src="./js/dashboard.js"></script>
+{{/if}}

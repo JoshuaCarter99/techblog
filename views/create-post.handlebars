@@ -1,0 +1,51 @@
+{{log this}}
+
+<section class="d-flex flex-column col-10">
+    {{!-- Single blogpost --}}
+    <section class="card" id="post-{{blogpost.id}}">
+        <section class="card-header d-flex flex-row justify-content-between">
+            <p><b>{{blogpost.title}}</b></p>
+            <p>Posted by {{blogpost.user.username}} on {{format_date blogpost.date_created}}</p>
+        </section>
+
+        <section class="card-body">
+            <p>{{blogpost.content}}</p>
+        </section>
+    </section>
+
+    {{!-- Comment form --}}
+    <section class="card">
+        <section class="card-header">
+            <p></p>
+        </section>
+
+        <section class="card-body">
+            <form class="d-flex flex-column">
+                <label for="comment"><b>Comment:</b></label>
+                <input type="text" id="comment">
+                <input type="hidden" id="post-id" value={{blogpost.id}}>
+                <button type="submit" class="btn btn-secondary mt-1">Submit</button>
+            </form>
+        </section>
+    </section>
+
+    {{!-- List of existing comments --}}
+    <section class="comments-section d-flex flex-column">
+
+        {{#each comments as |comment|}}
+        <section class="card" id="comment-{{comment.id}}">
+            <section class="card-header">
+                <p></p>
+            </section>
+
+            <section class="card-body">
+                <p>{{comment.body}}</p>
+                <p>--{{comment.user.username}}, {{format_date comment.date_created}}</p>
+            </section>
+        </section>
+        {{/each}}
+
+    </section>
+</section>
+
+<script src="../../js/comment.js"></script>

@@ -1,0 +1,17 @@
+{{#each blogposts as |post|}}
+
+<section class="card clickable-card" id="post-{{post.id}}">
+    <section class="card-header d-flex flex-row justify-content-between">
+        <p><b>{{post.title}}</b></p>
+        <p>Posted by {{post.user.username}} on {{format_date post.date_created}}</p>
+    </section>
+
+    <section class="card-body">
+        <p>{{post.content}}</p>
+    </section>
+</section>
+
+{{/each}}
+
+{{!-- Script allows user to click on blogpost and create/view comments --}}
+<script src="./js/blogpost.js"></script>

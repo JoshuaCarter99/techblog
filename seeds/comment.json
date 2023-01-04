@@ -1,0 +1,12 @@
+[
+    {
+        "body": "I just learned about this in my class!",
+        "user_id": 2,
+        "blogpost_id": 2
+    },
+    {
+        "body": "Thank you for clarifying!",
+        "user_id": 1,
+        "blogpost_id": 1
+    }
+]

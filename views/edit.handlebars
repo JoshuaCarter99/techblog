@@ -1,0 +1,26 @@
+{{log this}}
+<section class="col-10">
+    <section class="card">
+        <section class="card-header d-flex justfiy-content-between">
+            <p><b>Edit Post</b></p>
+        </section>
+
+        <section class="card-body">
+            <form class="d-flex flex-column">
+                <label for="title"><b>Title:</b></label>
+                <input type="text" id="title" value="{{blogpost.title}}">
+
+                <label for="content"><b>Content:</b></label>
+                <textarea id="content" rows="5">{{blogpost.content}}</textarea>
+
+                <input type="hidden" id="post-id" value={{blogpost.id}}>
+
+                <button type="submit" id="update-post" class="btn btn-secondary mt-1"><b>Update Post</b></button>
+                <button type="submit" id="delete-post" class="btn btn-secondary mt-1"><b>Delete</b></button>
+            </form>
+        </section>
+
+    </section>
+</section>
+
+<script src="../../js/edit-blogpost.js"></script>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="/css/jass.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/style.css">
+    <title>Tech Blog</title>
+</head>
+
+<body>
+    <header class="mb-4">
+        <nav>
+            <ul>
+                <li> <a href="/home">Home</a> </li>
+                <li> <a href="/dashboard">Dashboard</a> </li>
+                {{!-- If already logged in, show Logout option --}}
+                {{#if loggedIn}}
+                <li> <a href="/logout">Logout</a> </li>
+                {{!-- If not logged in yet, show Login option --}}
+                {{else}}
+                <li> <a href="/login">Login</a> </li>
+                {{/if}}
+                
+            </ul>
+        </nav>
+
+        <section class="d-flex flex-row flex-wrap justify-content-between" id="title-user">
+            <section class="card border-0" id="title-card">
+                <section class="card-body" id="title-body">
+                    {{#if dashboard}}
+                    <h1 class="title"><b>Your Dashboard</b></h1>
+                    {{else}}
+                    <h1 class="title"><b>The Tech Blog</b></h1>
+                    {{/if}}
+                </section>
+            </section>
+        
+            {{#if loggedIn}}
+            <h1 id="hello-user" class="align-self-end">Hello {{username}}!</h1>
+            {{/if}}
+        </section>
+    </header>
+
+    <section class="d-flex justify-content-center">
+        {{{body}}}
+    </section>
+
+    {{#if loggedIn}}
+    <script src="/js/idle-checker.js"></script>
+    {{/if}}
+</body>
+
+</html>
