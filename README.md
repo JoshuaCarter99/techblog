@@ -10,32 +10,30 @@
 ## Installation
 
 1. Created repository on GitHub.com and cloned repository locally to desktop.
-2. Copied starting files from challenge folder within Module.
-3. NPM Installed package.json dependencies and modified js files and others (did provided "to-dos")
-5. Tested functionality in broswer (online/offline).
+2. Created basic template and files with help from module.
+3. Wrote all .js and handlebars files and populated seed data.
+4. Tested functionality in browser (via localhost).
+5. Pushed repository up to Heroku and deployed application.
 6. Pushed local changes back to main branch on original GitHub repository (via GitHub.com).
 
 
 ## Usage
 
-1. Git clone repo to your computer.
-2. Make sure dependencies are installed accordingly (Node/Nodemon, package.json dependencies, gitbash terminal).
-3. Run "node server.js" after running a "cd" into the repository (and server side folder "server").
-4. Hit the install button on the page to use it in offline mode!
+1. Open website using the provided link
+2. Create an account via the "login" page.
+3. Move between home and dashboard to create and view posts!
 
 
 ## Credits
 
 Credit for putting this project together goes to:
 
-UPenn Full Stack Coding Module 19: PWA
+UPenn Full Stack Coding Module 14: MVC
 
 ## Link
 
 Repo: 
-https://github.com/JoshuaCarter99/texteditor
-
-![alt text](https://github.com/JoshuaCarter99/texteditor/blob/main/Screenshot%20(27).png)
+https://github.com/JoshuaCarter99/techblog
 
 ## License
 
