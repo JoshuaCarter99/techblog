@@ -1,9 +1,8 @@
 const router = require('express').Router();
 const { User, Blogpost, Comment } = require('../../models');
-// Custom middleware to check whether user is logged in or not
+
 const withAuth = require('../../utils/withAuth');
 
-// Create new comment on blogpost
 router.post('/:id/comments', withAuth, async (req, res) => {
     try {
         const commentData = await Comment.create({
@@ -19,7 +18,6 @@ router.post('/:id/comments', withAuth, async (req, res) => {
     }
 });
 
-// Create new blogpost on dashboard & home
 router.post('/', withAuth, async (req, res) => {
     try {
         const postData = await Blogpost.create({
@@ -35,7 +33,6 @@ router.post('/', withAuth, async (req, res) => {
     }
 });
 
-// Delete user's blogpost with same ID
 router.delete('/:id', withAuth, async (req, res) => {
     try {
         const postData = await Blogpost.destroy({
@@ -57,7 +54,6 @@ router.delete('/:id', withAuth, async (req, res) => {
     }
 });
 
-// Update user's blogpost with same ID
 router.put('/:id', withAuth, async (req, res) => {
     try {
         const postData = await Blogpost.update(

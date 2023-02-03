@@ -7,7 +7,6 @@ const delPostHandler = async (event) => {
         method: 'DELETE',
     });
 
-    // If response is ok, render dashboard with updated list of user's blogposts
     if (response.ok) {
         document.location.replace('/dashboard');
     } else {
@@ -15,11 +14,9 @@ const delPostHandler = async (event) => {
     }
 };
 
-// Update user's blogpost
 const updatePostHandler = async (event) => {
     event.preventDefault();
 
-    // Grab blogpost ID, and updated title and content from form
     const id = document.getElementById('post-id').value;
     const title = document.getElementById('title').value;
     const content = document.getElementById('content').value;
@@ -33,7 +30,6 @@ const updatePostHandler = async (event) => {
         headers: { 'Content-Type': 'application/json' }
     });
 
-    // If response is ok, render dashboard with updated list of user's blogposts
     if (response.ok) {
         document.location.replace('/dashboard');
     } else {

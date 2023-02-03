@@ -1,7 +1,6 @@
 {{log this}}
 
 <section class="d-flex flex-column col-10">
-    {{!-- Single blogpost --}}
     <section class="card" id="post-{{blogpost.id}}">
         <section class="card-header d-flex flex-row justify-content-between">
             <p><b>{{blogpost.title}}</b></p>
@@ -13,7 +12,6 @@
         </section>
     </section>
 
-    {{!-- Comment form --}}
     <section class="card">
         <section class="card-header">
             <p></p>
@@ -29,7 +27,6 @@
         </section>
     </section>
 
-    {{!-- List of existing comments --}}
     <section class="comments-section d-flex flex-column">
 
         {{#each comments as |comment|}}

@@ -12,11 +12,9 @@ const commentFormHandler = async (event) => {
         });
 
         if (response.ok) {
-            // If user not logged in, withAuth sends res.redirect('/login'), so force browser to go to /login
             if (response.redirected) {
                 alert('You must be logged in to leave a comment.');
                 document.location.replace('/login');
-            // If user logged in, new comment was added successfully
             } else {
                 document.location.reload();
             }

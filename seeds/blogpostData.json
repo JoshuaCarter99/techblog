@@ -1,0 +1,17 @@
+[
+    {
+        "title": "Why won't this seed properly?",
+        "content": "What is a .env file anyways",
+        "user_id": 1
+    },
+    {
+        "title": "What is Python and what can I do with it?",
+        "content": "My friends keeping talking about Python and its great functionality, but I've never used it. What's the hype?",
+        "user_id": 2
+    },
+    {
+        "title": "JAVASCRIPT IS OVERHATED ON TECH BLOGS",
+        "content": "I get that its a pain to use, but why the hate?",
+        "user_id": 3
+    }
+]

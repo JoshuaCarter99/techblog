@@ -24,8 +24,6 @@ Blogpost.init(
             allowNull: false,
             defaultValue: DataTypes.NOW
         },
-        // Foreign key that references ID in User model
-        // Keeps track of the user who posted this blogpost
         user_id: {
             type: DataTypes.INTEGER,
             allowNull: false,

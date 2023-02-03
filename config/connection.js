@@ -3,7 +3,6 @@ require('dotenv').config();
 
 let sequelize;
 
-// Check if using Heroku or locally
 if (process.env.JAWSDB_URL) {
     sequelize = new Sequelize(process.env.JAWSDB_URL);
 } else {

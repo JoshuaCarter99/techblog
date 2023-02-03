@@ -5,7 +5,6 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Bootstrap -->
     <link rel="stylesheet" href="/css/jass.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="/css/style.css">
@@ -18,10 +17,8 @@
             <ul>
                 <li> <a href="/home">Home</a> </li>
                 <li> <a href="/dashboard">Dashboard</a> </li>
-                {{!-- If already logged in, show Logout option --}}
                 {{#if loggedIn}}
                 <li> <a href="/logout">Logout</a> </li>
-                {{!-- If not logged in yet, show Login option --}}
                 {{else}}
                 <li> <a href="/login">Login</a> </li>
                 {{/if}}
@@ -39,10 +36,6 @@
                     {{/if}}
                 </section>
             </section>
-        
-            {{#if loggedIn}}
-            <h1 id="hello-user" class="align-self-end">Hello {{username}}!</h1>
-            {{/if}}
         </section>
     </header>
 
@@ -50,9 +43,6 @@
         {{{body}}}
     </section>
 
-    {{#if loggedIn}}
-    <script src="/js/idle-checker.js"></script>
-    {{/if}}
 </body>
 
 </html>

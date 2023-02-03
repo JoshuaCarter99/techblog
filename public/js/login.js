@@ -1,13 +1,10 @@
 const loginFormHandler = async (event) => {
     event.preventDefault();
 
-    // Grab username and password values inputted in form
     const username = document.querySelector('#username-login').value.trim();
     const password = document.querySelector('#password-login').value.trim();
 
-    // If both username and password provided
     if (username && password) {
-        // Send username and password to /api/users/login
         const response = await fetch('/api/users/login', {
             method: 'POST',
             body: JSON.stringify({ username, password }),

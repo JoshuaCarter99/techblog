@@ -1,19 +1,16 @@
 const router = require('express').Router();
 const { User, Blogpost, Comment } = require('../models');
 const findUsername = require('../utils/findUsername');
-// Custom middleware to check whether user is logged in or not
 const withAuth = require('../utils/withAuth');
 
-// At /, redirect user to /home
 router.get('/', async (req, res) => {
     res.redirect('/home');
 });
 
-// At /home, show all existing blog posts
 router.get('/home', async (req, res) => {
     try {
         const blogpostData = await Blogpost.findAll({
-            // Include associated Users' usernames
+
             include: [
                 {
                     model: User,
@@ -36,7 +33,6 @@ router.get('/home', async (req, res) => {
     }
 });
 
-// At /dashboard, if logged in, show all of user's blogposts, button for new post
 router.get('/dashboard', withAuth, async (req, res) => {
     try {
         const blogpostData = await Blogpost.findAll({
@@ -53,9 +49,8 @@ router.get('/dashboard', withAuth, async (req, res) => {
 
         const blogposts = blogpostData.map((blogpost => blogpost.get({ plain: true })));
 
-        // Check if user has clicked on new post button
         let creatingPost = false;
-        // If /dashboard?creatingPost=true
+
         if (req.query.creatingPost) {
             creatingPost = true;
         }
@@ -74,7 +69,6 @@ router.get('/dashboard', withAuth, async (req, res) => {
     };
 })
 
-// At /home/posts/:id, show all comments on blogpost and new comment form
 router.get('/home/posts/:id', async (req, res) => {
     try {
         const blogpostData = await Blogpost.findByPk(req.params.id, {
@@ -83,7 +77,6 @@ router.get('/home/posts/:id', async (req, res) => {
                     model: User,
                     attributes: ['username']
                 },
-                // Include associated comments on blogpost, and users who left comments 
                 {
                     model: Comment,
                     include: [
@@ -114,7 +107,6 @@ router.get('/home/posts/:id', async (req, res) => {
     }
 });
 
-// At /dashboard/posts/:id, show form to edit blogpost
 router.get('/dashboard/posts/:id', withAuth, async (req, res) => {
     try {
         const blogpostData = await Blogpost.findByPk(req.params.id, {
@@ -140,31 +132,27 @@ router.get('/dashboard/posts/:id', withAuth, async (req, res) => {
     }
 });
 
-// Render login form
+
 router.get('/login', (req, res) => {
-    // If already logged in, redirect user to dashboard
+
     if (req.session.loggedIn) {
         res.redirect('/dashboard');
         return;
     } 
-    // If not logged in, render login page
+
     res.render('login');
 });
 
-// Sign up route
 router.get('/signup', (req, res) => {
-    // If already logged in, redirect user to dashboard 
+
     if (req.session.loggedIn) {
         res.redirect('/dashboard');
         return;
     } 
-    // If not logged in, render signup page
     res.render('signup');
 });
 
-// Log out
 router.get('/logout', (req, res) => {
-    // If already logged in, destroy session, redirect user to home
     if (req.session.loggedIn) {
         req.session.destroy(() => {
             res.redirect('/');

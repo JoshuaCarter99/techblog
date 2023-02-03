@@ -20,8 +20,6 @@ Comment.init(
             allowNull: false,
             defaultValue: DataTypes.NOW
         },
-        // Foreign key that references ID in User model
-        // Keeps track of the user who commented
         user_id: {
             type: DataTypes.INTEGER,
             allowNull: false,
@@ -30,8 +28,6 @@ Comment.init(
                 key: 'id'
             }
         },
-        // Foreign key that references ID in Blogpost model
-        // Keeps track of the blogpost that this comment belongs to
         blogpost_id: {
             type: DataTypes.INTEGER,
             allowNull: false,

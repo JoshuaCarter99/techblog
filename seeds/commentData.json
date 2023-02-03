@@ -1,11 +1,11 @@
 [
     {
-        "body": "I just learned about this in my class!",
+        "body": "Python is a language",
         "user_id": 2,
         "blogpost_id": 2
     },
     {
-        "body": "Thank you for clarifying!",
+        "body": "I don't even know lol",
         "user_id": 1,
         "blogpost_id": 1
     }

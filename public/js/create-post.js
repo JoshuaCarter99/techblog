@@ -14,7 +14,6 @@ const createPostHandler = async (event) => {
             headers: { 'Content-Type': 'application/json' },
         });
 
-        // If response is ok, render dashboard with updated list of user's blogposts
         if (response.ok) {
             document.location.replace('/dashboard');
         } else {
